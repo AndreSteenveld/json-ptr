@@ -8,8 +8,8 @@
   }
   // eslint-disable-next-line no-undef
 }(typeof self !== 'undefined' ? self : this, function () {
-  var root = this;
-  var $savedJsonPointer = this.JsonPointer;
+  var root = this || Object.create( null );
+  var $savedJsonPointer = "undefined" === typeof this ? void( 0 ) : this.JsonPointer;
 
   function replace(str, find, repl) {
     // modified from http://jsperf.com/javascript-replace-all/10
